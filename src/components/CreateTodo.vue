@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useTodoStore } from '@/stores/todo'
+import { useTodosStore } from '@/stores/todo'
 
 const router = useRouter()
-const todoStore = useTodoStore()
+const todoStore = useTodosStore()
 const { createTodo } = todoStore
 
 const title = ref('')

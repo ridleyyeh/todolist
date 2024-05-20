@@ -26,11 +26,13 @@ export const useTodosStore = defineStore('todos', () => {
   }
 
   const deleteTodo = (todoid: number) => {
+    console.log(`Before delete: ${JSON.stringify(todos.value)}`)
     todos.value = todos.value.filter((todo) => todo.id !== todoid)
+    console.log(`After delete: ${JSON.stringify(todos.value)}`)
     //   *filter過後會返回一個todo.id不等於todoid的新陣列，也就是說他會過濾掉id一樣的，實現刪除行為
   }
 
-  const toogleTodoCompletion = (todoid: number) => {
+  const toggleTodoCompletion = (todoid: number) => {
     const todo = todos.value.find((todo) => todo.id === todoid)
     if (todo) {
       todo.completed = !todo.completed
@@ -43,6 +45,6 @@ export const useTodosStore = defineStore('todos', () => {
     createTodo,
     updateTodo,
     deleteTodo,
-    toogleTodoCompletion
+    toggleTodoCompletion
   }
 })

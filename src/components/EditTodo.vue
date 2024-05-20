@@ -18,14 +18,14 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { useTodoStore } from '../stores/todo';
+import { useTodosStore } from '../stores/todo';
 
 // 獲取當前路由信息
 const route = useRoute();
 // 獲取 Vue Router 實例
 const router = useRouter();
 // 獲取 Pinia Store 實例
-const todoStore = useTodoStore();
+const todoStore = useTodosStore();
 
 // 獲取當前路由參數中的 ID
 const todoId = Number(route.params.id);
